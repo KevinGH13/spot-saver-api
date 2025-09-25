@@ -6,6 +6,7 @@ import { SpotTypeModule } from './modules/spot-type/spot-type.module';
 import { SpotModule } from './modules/spot/spot.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import mongoConfig from './config/mongo.config';
+import { HealthController } from './modules/health/health.controller';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import mongoConfig from './config/mongo.config';
     SpotTypeModule,
     SpotModule
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [AppService]
 })
 export class AppModule { }
